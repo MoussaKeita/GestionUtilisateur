@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} {{ plat.libelle}} {% endblock %}
+
+{% block body %}
+  <h1>{{ plat.libelle }}</h1>
+  <p>{{ plat.prix}}</p>
+<hr>
+  <a href="/plat" class="btn btn-light">Go Back</a>
+{% endblock %}

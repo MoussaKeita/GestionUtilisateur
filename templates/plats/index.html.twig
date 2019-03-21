@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Plats {% endblock %}
+
+{% block body %}
+
+  {% if plats %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Plat Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for plat in plats %}
+          <tr>
+            <td>{{ plat.libelle }}</td>
+            <td>
+              <a href="/plat/{{ plat.id }}" class="btn btn-dark">Show</a>
+            </td>
+            <td>
+              <a href="/plat/update/{{ plat.id }}" class="btn btn-info">Update</a>
+            </td>
+            <td>
+              <a href="/plat/delete/{{ plat.id }}" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Plats yok</p>
+  {% endif %}
+
+{% endblock %}
